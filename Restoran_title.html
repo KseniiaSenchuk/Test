@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restoran</title>
+    <style>
+     body {
+         margin: 0;
+         font-family: sans-serif;
+        }
+    .conteiner {
+        margin: 0px 166px;
+    }
+    .header {
+        background-image: url(Icons/bg.jpg);
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .header_line {
+        padding-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .nav_item {
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 14px;
+        margin-right: 25px;
+        transition: color 0.3s linear;
+    }
+    .nav_item:hover {
+        color: red;
+    }
+    .cart {
+        border-right: 1px solid white;
+        padding-right: 10px;
+        height: 50px;
+        position: relative;
+    }
+    .cart_img {
+        position: absolute;
+        top: 18px;
+        right: 7px;
+    }
+    .num {
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        transition: color 0.3s linear;
+    }
+    .num:hover {
+        color: red;
+    }
+    .phone_text {
+        font-size: 14px;
+        font-weight: 400;
+        color: white;
+    }
+    .phone_holder {
+        display: flex;
+        align-items: center;
+    }
+    .button {
+        background-color: orange;
+        color: white;
+        text-decoration: none;
+        padding: 14px 18px;
+        font-weight: 700;
+        transition: background-color 0.2s linear;
+    }
+    .button:hover {
+        background-color: rgb(189, 124, 3);
+    }
+    .header_down {
+        position: relative;
+    }
+    .header_title {
+        color: rgb(226, 163, 47);
+        font-size: 50px;
+        font-weight: 400;
+        text-align: center;
+        position: absolute;
+        left: 0;
+        margin-top: 222px;
+        margin-bottom: 12px;
+        }
+    .header_suptitle {
+        color: white;
+        font-size: 18px;
+        margin-top: 15px;
+    }
+    .header_suptitle::after {
+        position: absolute;
+        content:'';
+        height: 2px;
+        width: 61px;
+        background-color: white;
+        top: 140px;
+        left: 56px;
+    }
+    .header_suptitle::before {
+        position: absolute;
+        content:'';
+        height: 2px;
+        width: 61px;
+        background-color: white;
+        top: 140px;
+        left: 360px;
+    }
+    .header_button {
+        background-color: orange;
+        padding: 14px 28px;
+        color: white;
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: background-color 0.3s linear;
+    }
+    .header_button:hover {
+        background-color: rgb(189, 124, 3);
+    }
+    .card {
+        width: 349px;
+        box-shadow: 2px 2px 5px 5px rgb(208, 203, 203);
+        margin-right: 31px;
+        background-color: white;
+        margin-top: -80px;
+        padding: 10px 10px;
+    }
+    .card_image {
+        display: flex;
+        justify-content: center;
+        padding-top: 31px;
+    }
+    .card_desc {
+        text-align: center;
+        font-size: 26px;
+        font-weight: 400;
+        color: rgb(77, 75, 75);
+    }
+    .card_title {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        font-size: 26px;
+        font-weight: 400;
+    }
+    .cards_holder {
+        display: flex;
+        justify-content: center;
+    }
+    .card_title span {
+        color: rgb(189, 124, 3);
+    }
+    .history_title {
+        font-size: 54px;
+        font-weight: 400;
+        width: 444px;
+        text-align: center;
+        
+    }
+    .history_title span {
+        color: rgb(189, 124, 3);
+    }
+    .history_desc {
+        color: rgb(77, 75, 75);
+        font-size: 16px;
+        width: 444px;
+        text-align: center;
+        margin-top: 21px;
+    }
+    .history {
+        margin-top: 166px;
+        padding-bottom: 200px;
+    }
+    .history_number {
+        display: flex;
+        width: 444px;
+        justify-content: center;
+        margin-top: 40px;
+        margin-left: 30px;
+    } 
+    .number_item {
+        margin-right: 60px;
+        text-align: center;
+        font-size: 40px;
+        color:rgb(189, 124, 3);
+    }
+    .number_item span {
+        display: block;
+        color: rgb(77, 75, 75);
+    }
+    .history_holder {
+        display: flex;
+        justify-content: space-between;
+    }
+    .history_images {
+        position: relative;
+    }
+    .images_1 {
+        position: absolute;
+        z-index: 0;
+        top: -400px;
+        left: 550px;
+    }
+    .images_2 {
+        position: absolute;
+        z-index: 200;
+        top: -410px;
+        left: 791px;
+    }
+    .images_3 {
+        position: absolute;
+        z-index: 999;
+        top: -165px;
+        left: 625px;
+    }
+    .black_block {
+        background-image: url(Icons/bg.jpg);
+        padding: 80px 0px;
+    }
+    .left_title {
+        color: orange;
+        font-size: 52px;
+        font-weight: 400px;
+    }
+    .right_btn {
+        background-color: orange;
+        color: white;
+        text-decoration: none;
+        padding: 14px 18px;
+        font-weight: 700;
+        transition: background-color 0.2s linear;
+    }
+    .block_holder {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+    .left_texe {
+        font-weight: 700;
+        font-size: 24px;
+        color: white;
+    }
+    
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="conteiner">
+        <div class="header_line">
+            <div class="header_logo">
+                <img src="Icons/logo.png" alt="logo">
+            </div>
+            <div class="nov">
+                <a class="nav_item" href="#">ГОЛОВНА</a>
+                <a class="nav_item" href="Restoran_menu.html">МЕНЮ</a>
+                <a class="nav_item" href="#">ПРО НАС</a>
+                <a class="nav_item" href="#">БРОНЬ</a>
+            </div>
+            <div class="cart">
+                <a href="*">
+                    <img class="cart_img" src="Icons/cart.png" alt="cart">
+                </a>
+            </div>
+            <div class="phone">
+                <div class="phone_holder"> 
+                <div class="phone_img">
+                    <img src="Icons/phone.png" alt="phone">
+                </div>
+                <div class="number"> <a class="num" href="*">0665220000</a> </div>
+            </div>
+                <div class="phone_text">Зв'яжіться з нами для <br> бронювання</div>
+            </div>
+            <div class="btn">
+                <a class="button" href="#">Бронювання cтолу</a>
+            </div>
+        </div>
+        <div class="header_down">
+            <div class="header_title">
+                Ласкаво просимо до
+                <div class="header_subtitle">
+                Нашого ресторану
+                </div>
+                <div class="header_suptitle">
+                Будинок найкращої їжi
+                </div>
+                <div class="header_btn">
+                    <a href="Restoran_menu.html" class='header_button'> МЕНЮ</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="cards"> 
+        <div class="conteiner">
+        <div class="cards_holder">
+        <div class="card">
+            <div class="card_image">
+                <img class="card_img" src="Icons/card.png" alt="card">
+            </div>
+            <div class="card_title">
+                Чарiвна <span> атмосфера</span>
+            </div>
+            <div class="card_desc">
+                В нашому закладі чарівна атмосфера наповнена смачними ароматами
+            </div>
+        </div>
+        <div class="card">
+            <div class="card_image">
+                <img class="card_img" src="Icons/card.png" alt="card">
+            </div>
+            <div class="card_title">
+                Найкраща  <span> якiсть</span>
+            </div>
+            <div class="card_desc">
+                Якiсть нашої їжi неперевершена
+            </div>
+        </div>
+        <div class="card">
+            <div class="card_image">
+                <img class="card_img" src="Icons/card.png" alt="card">
+            </div>
+            <div class="card_title">
+                Доступна <span> цiна</span>
+            </div>
+            <div class="card_desc">
+                Вартiсть нашої їжi залежить тiльки вiд її кiлькостi
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>   
+    </div> 
+    <div class="history">
+        <div class="conteiner">
+            <div class="history_holder">
+            <div class="history_info">
+        <div class="history_title"> Наша  <span>iсторiя </span></div>
+        <div class="history_desc"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus ipsa unde cumque, ipsum blanditiis atque repudiandae doloremque sapiente eaque numquam itaque ullam sit magnam enim iure sunt nisi qui veniam culpa in consequatur! Quam consectetur voluptas ex ipsa laudantium. Rerum ipsa inventore vitae nihil et ullam officia alias non tempora?
+      </div>
+      <div class="history_number">
+        <div class="number_item">
+            93 <span> Напої</span>
+        </div>
+        <div class="number_item">
+            206 <span> Їжа</span>
+        </div>
+        <div class="number_item">
+            71 <span> Закуски</span>
+        </div>
+    </div>
+
+    <div class="history_images">
+        <img class="images_1" src="Icons/1.jpg" alt="1">
+        <img class="images_2" src="Icons/2.jpg" alt="2">
+        <img class="images_3" src="Icons/3.jpg" alt="3">
+    </div>   
+    </div> 
+</div>  
+</div>
+    </div>
+
+    <div class="black_block">
+
+         <div class="conteiner">
+
+                    <div class="block_holder"> 
+                            <div class="left"> 
+                            <div class="left_title"> Свято в одному з <br> найкращих ресторанiв
+                        </div>
+                        <div class="left_texe">
+                            Бiзнес ланч всього 199 грн
+                        </div>
+                        </div>
+            <div class="right">
+                <div class="right_button"> 
+                    <a href="#" class="right_btn" > На початок </a>
+                    </div>
+                </div> 
+            </div>
+         </div>
+    </div>
+
+
+</body>
+</html>
